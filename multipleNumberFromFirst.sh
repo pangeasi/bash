@@ -1,4 +1,5 @@
 #!/bin/bash
+#programa que pida una lista de numeros y devuelva aquellos que son multiplos del primero
 
 numbers=$@
 
