@@ -3,7 +3,7 @@
 args=$@
 
 for num in $@ ; do
- echo $num | bash kk9.sh
+ echo $num | bash multiplicationTable.sh
 done
 
 
