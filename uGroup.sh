@@ -1,4 +1,5 @@
 #!/bin/bash
+#All users from argv group
 group=$1
 
 for line in "`grep "^${group}:" /etc/group`" ; do
