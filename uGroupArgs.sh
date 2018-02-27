@@ -3,5 +3,5 @@
 params=$@
 
 for group in $@ ; do
- bash kk11.sh $group  
+ bash uGroup.sh $group  
 done
