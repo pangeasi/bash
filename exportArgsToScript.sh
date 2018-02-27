@@ -2,5 +2,5 @@
 
 
 export x=1
-x=$(./kk5.sh $x)
+x=$(./externalScript.sh $x)
 echo $x
