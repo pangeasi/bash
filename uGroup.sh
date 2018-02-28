@@ -11,4 +11,3 @@ usersPasswd=$(awk -F":" '$4 ~ /^'${gid}'$/ { printf("%s ",$1) }' /etc/passwd)
 
 echo "Grupo: $1"
 echo "$usersGroup $usersPasswd"
-
