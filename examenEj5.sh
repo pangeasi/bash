@@ -1,30 +1,16 @@
 #!/bin/bash
-#ej1,ej2,ej3
 
 convert() {
-count=0
-last=""
-patt=""
-for elem in $(egrep -o . <<<"$1") ; do
-    if (( $count == 0 )) ; then
-        last=$elem
-    else
-        patt=$patt$elem
-    fi
-    let count++
-done
-pattern2=$patt$last
+	pattern2=$(echo $1 | cut -c$(($2+1))-${#1})$( echo $1 | cut -c1-$(($2)) 2>/dev/null)
 }
-
 pattern=$1
 move=$2
 letter=$3
-convert "$pattern"
-
-    i=0
-    while (( $i < $move )) ; do
-        letter=$(echo $letter | tr $pattern $pattern2)
-        let i++
-    done
-
-    echo $letter
+if (( $move > ${#pattern} )) ; then
+	move=$(($move % ${#pattern}))
+	convert $pattern $move
+else
+	convert $pattern $move
+fi
+letter=$(echo $letter | tr $pattern $pattern2)
+echo $letter
